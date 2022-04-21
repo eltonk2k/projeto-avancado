@@ -3,22 +3,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .teste::before {
     content: url(./assets/check.svg);
 }
