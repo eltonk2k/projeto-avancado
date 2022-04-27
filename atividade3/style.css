@@ -1,8 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 
 
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+  
 
-.teste::before {
-    content: url(./assets/check.svg);
+
+.pricing-plan {
+    width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555555;
+    margin: 15px;
+}
+
+/*cabeçalho */
+.pricing-plan__header {
+    padding: 25px;
+    background: #FFCC29;
+   
+}
+
+.pricing-plan__title {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    color: #000000;
+}
+
+.pricing-plan__title {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+/*talvez nao va precisar do sumary*/
+.pricing-plan__summary { 
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.pricing-plan__drescription {
+    padding: 25px;
+}
+
+/* retirando os pontos do LU  */
+NAO PRECISAR DISSO
+.pricing-plan__list {
+    padding: 0;
+    margin: 0;
+}
+
+/* retirando os pontos do LI  */
+.pricing-plan__feature {  
+    list-style: none;
+    margin: 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.9em;
+}
+
+.pricing-plan__feature::not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+/* colocando nike no LI  */
+.pricing-plan__feature::before {
+    content: "\2714";
+    color: #009578;
+    position: absolute;
+    left: 0;
+}
+
+.pricing-plan__actions {
+    padding: 25px;
+    border-top: 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-plan__button {
+    display: inline-block;
+    margin: 15px auto;
+    padding: 10px 75px;
+    text-decoration: none;
+    color: #1D539E;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #1D539E;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+}
+
+.pricing-plan__button_basico {
+    display: inline-block;
+    margin: 15px auto;
+    padding: 10px 75px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #1D539E;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+}
+
+
+.pricing-plan__button:hover {
+    background: #1D539E;
+    color: #ffffff;
+}
+
+.pricing-plan__cost {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    color: #1E2338;
+}
+
+.pricing-plan__month {
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0 0 10px 0;
+    color: #828799;
+}
+
+.pricing-plan__text {
+    font-size: 0.9em;
+    text-align: center;
+
+    color: #828799;
 }
