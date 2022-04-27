@@ -103,6 +103,11 @@ NAO PRECISAR DISSO
     font-weight: bold;
 }
 
+.pricing-plan__button:hover {
+    background: #1D539E;
+    color: #ffffff;
+}
+
 .pricing-plan__button_basico {
     display: inline-block;
     margin: 15px auto;
@@ -116,10 +121,9 @@ NAO PRECISAR DISSO
     font-weight: bold;
 }
 
-
-.pricing-plan__button:hover {
-    background: #1D539E;
-    color: #ffffff;
+.pricing-plan__button_basico:hover {
+    background: #ffffff;
+    color: #1D539E;
 }
 
 .pricing-plan__cost {
