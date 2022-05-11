@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ola mundo!</h1>
+    <script>
+        fetch("https://swapi.dev/api/planets/?page=2")
+  .then(res => {
+    res.json().then(data => {
+
+      const planets = data.results
+      console.log("Lista de planetas:", planets)
+
+      const planetsFilterFrozen = planets.filter(item => item.climate.includes("frozen"))
+      console.log("Planetas com clima frozen: ", planetsFilterFrozen)
+
+      const planetsFilterTemperate = planets.filter(item => item.climate.includes("temperate")).map((item) => item.name)
+
+      const nomesPlanetasTemperate = planets.map(function (item) {
+        if (planetsFilterTemperate.includes(item.name)) {
+          return { name: item.name, temperate: "Sim" }
+        } else {
+          return { name: item.name, temperate: "Não" }
+        }
+      })
+      console.log("Planetas com clima temperate: ", nomesPlanetasTemperate)
+
+      const qntPlanetsTemperate = nomesPlanetasTemperate.reduce((total) => total = nomesPlanetasTemperate.filter(item => (item.temperate == "Sim")).length)
+      console.log("Quantidade de Planetas com clima temperate: ",qntPlanetsTemperate)
+    })
+  })
+  .catch((e) => console.log("Erro", e));
+
+
+  const getResults = async () => {
+    try{
+      const results = await fetch("https://swapi.dev/api/people/?page=2")
+      let personagens = await results.json();
+      const listaPersonagens = personagens.results;
+
+      console.log("Lista de personagens: ", listaPersonagens)
+
+      const personagenCorDePeleVerde = listaPersonagens.filter((item) => (item.skin_color == 'green'))
+      console.log("Lista personagens pele cor verde: ", personagenCorDePeleVerde)
+
+
+      const pesonagensMassaMaiorQue100 = listaPersonagens.filter((item) => (item.mass >= 100))
+      console.log("Lista personagens que tem massa maior que 100: ", pesonagensMassaMaiorQue100)
+
+      const personagensAlturaMaiorOuIgual180 = listaPersonagens.reduce((total) => total = listaPersonagens.filter(item => (item.height >= 180)).length)
+      console.log("Quantidade de personagens que tem altura maior ou igual a 180: ", personagensAlturaMaiorOuIgual180)
+
+      const nomePersonagens = listaPersonagens.map((item) => item.name)
+      console.log("Nome dos personagens: ", nomePersonagens)
+      }catch (error) {
+         console.log(error);
+    }
+  }
+
+  getResults()
+        
+    </script>
+
+</body>
+</html>
