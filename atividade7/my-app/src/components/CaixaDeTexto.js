@@ -1,4 +1,4 @@
-
+import "./caixaDeTexto.css"
 
 
 export function CaixaDeTexto(props) {
