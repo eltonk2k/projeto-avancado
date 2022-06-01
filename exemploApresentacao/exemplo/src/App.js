@@ -7,7 +7,7 @@ export default function App() {
   const BlinkyRender = () => {
     const [value, setValue] = useState(0);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       if (value === 0) {
         setValue(10 + Math.random() * 200);
       }
